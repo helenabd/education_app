@@ -1,5 +1,4 @@
 import 'package:education_app/core/core.dart';
-import 'package:education_app/core/extensions/extensions.dart';
 import 'package:education_app/src/onboarding/domain/domain.dart';
 import 'package:education_app/src/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
