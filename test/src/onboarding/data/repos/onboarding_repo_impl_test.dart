@@ -61,4 +61,22 @@ void main() {
       verifyNoMoreInteractions(localDataSource);
     });
   });
+
+  group('checkIfUserIsFirstTimer', () {
+    test('should return true when user is first timer', () async {
+      //Arrange - Setup facts, Put Expected outputs or Initilize
+      when(() => localDataSource.checkIfUserIsFirstTimer())
+          .thenAnswer((_) async => Future.value(true));
+
+      //Act - Call the function that is to be tested
+      final result = await repoImpl.checkIfUserIsFirstTimer();
+
+      //Assert - Compare the actual result and expected result
+      expect(result, equals(const Right<dynamic, bool>(true)));
+
+      verify(() => localDataSource.checkIfUserIsFirstTimer()).called(1);
+
+      verifyNoMoreInteractions(localDataSource);
+    });
+  });
 }

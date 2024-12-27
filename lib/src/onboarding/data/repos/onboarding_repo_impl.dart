@@ -1,3 +1,5 @@
+// ignore_for_file: flutter_style_todos
+
 import 'package:dartz/dartz.dart';
 import 'package:education_app/core/core.dart';
 import 'package:education_app/src/onboarding/data/data.dart';
@@ -24,8 +26,14 @@ class OnboardingRepoImpl implements OnboardingRepo {
   }
 
   @override
-  ResultFuture<bool> checkIfUserIsFirstTimer() {
-    // TODO: implement checkIfUserIsFirstTimer
-    throw UnimplementedError();
+  ResultFuture<bool> checkIfUserIsFirstTimer() async {
+    try {
+      final result = await _localDataSource.checkIfUserIsFirstTimer();
+      return Right(result);
+    } on CacheException catch (e) {
+      return Left(
+        CacheFailure(message: e.message, statusCode: e.statusCode),
+      );
+    }
   }
 }

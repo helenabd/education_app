@@ -11,10 +11,12 @@ Future<void> init() async {
 
   // Bloc - Business logic
   sl
-    ..registerFactory(() => OnboardingCubit(
-          cacheFirstTimer: sl(),
-          checkIfUserIsFirstTimer: sl(),
-        ))
+    ..registerFactory(
+      () => OnboardingCubit(
+        cacheFirstTimer: sl(),
+        checkIfUserIsFirstTimer: sl(),
+      ),
+    )
 
     // Use cases
     ..registerLazySingleton(() => CacheFirstTimer(sl()))
