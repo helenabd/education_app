@@ -19,6 +19,6 @@ abstract class AuthRepo {
 
   ResultFuture<void> updateUser({
     required UpdateUserAction action,
-    dynamic userData,
+    required dynamic userData,
   });
 }
