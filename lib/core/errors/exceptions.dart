@@ -20,7 +20,7 @@ class ServerException extends Equatable implements Exception {
   });
 
   final String message;
-  final int statusCode;
+  final dynamic statusCode;
 
   @override
   List<Object?> get props => [message, statusCode];
