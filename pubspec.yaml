@@ -12,7 +12,7 @@ environment:
 dependencies:
   bloc: ^8.1.4
   chewie: ^1.8.3
-  cloud_firestore: ^5.6.0
+  cloud_firestore: ^5.6.5
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   equatable: ^2.0.5
