@@ -21,8 +21,8 @@ Future<void> _initAuth() async {
     ..registerLazySingleton(() => SignUp(sl()))
     ..registerLazySingleton(() => ForgotPassword(sl()))
     ..registerLazySingleton(() => UpdateUser(sl()))
-    ..registerLazySingleton(() => AuthRepoImpl(sl()))
-    ..registerLazySingleton(
+    ..registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()))
+    ..registerLazySingleton<AuthRemoteDataSource>(
       () => AuthRemoteDataSourceImpl(
         authClient: sl(),
         cloudStoreClient: sl(),
