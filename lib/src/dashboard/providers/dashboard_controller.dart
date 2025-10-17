@@ -2,16 +2,24 @@ import 'package:education_app/core/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class DashbordController extends ChangeNotifier {
+class DashboardController extends ChangeNotifier {
   List<int> _indexHistory = [0];
 
   final List<Widget> _screens = [
     ChangeNotifierProvider(
-      create: (_) => TabNavigator(
-        TabItem(
-          child: const Placeholder(),
-        ),
-      ),
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentView(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => TabNavigator(TabItem(child: const Placeholder())),
       child: const PersistentView(),
     ),
   ];
